@@ -35,7 +35,7 @@ namespace CurrencyConverter.Services
             var client = new HttpClient();
             var response = await client.GetStringAsync($"{Commons.NBP_ROUTE}/{currency}");
             var nbpResponse = JsonConvert.DeserializeObject<NbpApiResponse>(response);
-            var rate = nbpResponse.Rates[0]?.mid;
+            var rate = nbpResponse.Rates[0]?.Mid;
            
             return rate ?? -1;
         }
@@ -51,7 +51,7 @@ namespace CurrencyConverter.Services
                 var nbpResponse = JsonConvert.DeserializeObject<NbpApiResponse>(response);
 
                 if(nbpResponse.Rates?.Count > 0)
-                    result.Add(nbpResponse.code, nbpResponse.Rates[0].mid);
+                    result.Add(nbpResponse.Code, nbpResponse.Rates[0].Mid);
             }
             return result;
         }

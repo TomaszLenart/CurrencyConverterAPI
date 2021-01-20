@@ -7,16 +7,16 @@ namespace CurrencyConverter.Classes.Dto
 {
     public class NbpApiResponse
     {
-        public string table { get; set; }
-        public string currency { get; set; }
-        public string code { get; set; }
+        public string Table { get; set; }
+        public string Currency { get; set; }
+        public string Code { get; set; }
         public IList<Rate> Rates { get; set; }
 
         public class Rate
         {
-            public string no { get; set; }
-            public DateTime effectiveDate { get; set; }
-            public decimal mid { get; set; }
+            public string No { get; set; }
+            public DateTime EffectiveDate { get; set; }
+            public decimal Mid { get; set; }
 
         }
     }
